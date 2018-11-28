@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">NMMImmortal</string>
+    <string name="red_piece1">RED_MARKER</string>
+    <string name="red_piece2">RED_MARKER</string>
+    <string name="red_piece3">RED_MARKER</string>
+    <string name="red_piece4">RED_MARKER</string>
+    <string name="red_piece5">RED_MARKER</string>
+    <string name="red_piece6">RED_MARKER</string>
+    <string name="red_piece7">RED_MARKER</string>
+    <string name="red_piece9">RED_MARKER</string>
+    <string name="red_piece8">RED_MARKER</string>
+
+    <string name="black_piece1">BLUE_MARKER</string>
+    <string name="black_piece2">BLUE_MARKER</string>
+    <string name="black_piece3">BLUE_MARKER</string>
+    <string name="black_piece4">BLUE_MARKER</string>
+    <string name="black_piece5">BLUE_MARKER</string>
+    <string name="black_piece6">BLUE_MARKER</string>
+    <string name="black_piece7">BLUE_MARKER</string>
+    <string name="black_piece8">BLUE_MARKER</string>
+    <string name="black_piece9">BLUE_MARKER</string>
+
+    <string name="board">board</string>
+
+
+
 </resources>

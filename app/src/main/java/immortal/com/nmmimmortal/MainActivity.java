@@ -51,6 +51,11 @@ public class MainActivity extends AppCompatActivity{
         textView.setText("Reds turn");
     }
 
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+    }
+
     private OnTouchListener onTouchListener(){
         return new View.OnTouchListener(){
 
@@ -181,13 +186,13 @@ public class MainActivity extends AppCompatActivity{
         boardGame = new Coordinate[25];
         boardGame[1] = new Coordinate((2*width)/6,(2*height)/6);
         boardGame[2] = new Coordinate((1*width)/6,(1*height)/6);
-        boardGame[3] = new Coordinate(30,30);
+        boardGame[3] = new Coordinate(0,0);
         boardGame[4] = new Coordinate(3*width/6,2*height/6);
         boardGame[5] = new Coordinate(3*width/6,height/6);
-        boardGame[6] = new Coordinate(3*width/6,30);
+        boardGame[6] = new Coordinate(3*width/6,0);
         boardGame[7] = new Coordinate(4*width/6,(2*height/6));
         boardGame[8] = new Coordinate(5*width/6,height/6);
-        boardGame[9] = new Coordinate(6*width/6,30);
+        boardGame[9] = new Coordinate(6*width/6,0);
         boardGame[10] = new Coordinate(4*width/6,3*height/6);
         boardGame[11] = new Coordinate(5*width/6,3*height/6);
         boardGame[12] = new Coordinate(6*width/6,3*height/6);
@@ -199,10 +204,10 @@ public class MainActivity extends AppCompatActivity{
         boardGame[18] = new Coordinate(3*width/6,6*height/6);
         boardGame[19] = new Coordinate(2*width/6,4*height/6);
         boardGame[20] = new Coordinate(1*width/6,5*height/6);
-        boardGame[21] = new Coordinate(30, 6*height/6);
+        boardGame[21] = new Coordinate(0, 6*height/6);
         boardGame[22] = new Coordinate(2*width/6,3*height/6);
         boardGame[23] = new Coordinate(1*width/6,3*height/6);
-        boardGame[24] = new Coordinate(30,3*height/6);
+        boardGame[24] = new Coordinate(0,3*height/6);
 
         for(int i = 0; i<9; i++){
             bw.getBlack()[i].setOnTouchListener(onTouchListener());

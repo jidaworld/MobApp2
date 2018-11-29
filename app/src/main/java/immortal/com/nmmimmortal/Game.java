@@ -2,9 +2,10 @@ package immortal.com.nmmimmortal;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.EmptyStackException;
 
-public class Game {
+public class Game implements Serializable {
 
     /*
      *  The game board positions
@@ -142,6 +143,7 @@ public class Game {
      * Returns true if the marker where successfully removed
      */
     public boolean remove(int From, int color) {
+        Log.i("GameLogic","From: " + From);
         if (gameplan[From] == color) {
             gameplan[From] = EMPTY_SPACE;
             return true;

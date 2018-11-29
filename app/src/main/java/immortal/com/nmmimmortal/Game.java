@@ -2,6 +2,8 @@ package immortal.com.nmmimmortal;
 
 import android.util.Log;
 
+import java.util.EmptyStackException;
+
 public class Game {
 
     /*
@@ -16,7 +18,7 @@ public class Game {
      *  21           18           15
      *
      */
-    private int[] gameplan;
+    public int[] gameplan;
     private int bluemarker, redmarker;
     private int turn; // player in turn
     private static final int BLUE_MOVES = 1;
@@ -41,17 +43,20 @@ public class Game {
         if (color == turn) {
             Log.i("GameLogic", "red moves");
             if (turn == RED_MOVES) {
-                if (redmarker >= 0) {
+                System.out.println("redmarker >= 0 " + (redmarker >= 0));
+                if (redmarker > 0 && From == 0) {
                     if (gameplan[To] == EMPTY_SPACE) {
                         gameplan[To] = RED_MARKER;
                         redmarker--;
                         turn = BLUE_MOVES;
                         return true;
                     }
-                } else if (gameplan[To] == EMPTY_SPACE) {
+                } else if (gameplan[To] == EMPTY_SPACE && redmarker == 0) {
+                    System.out.println("in moving state");
                     boolean valid = isValidMove(To, From);
                     if (valid) {
                         gameplan[To] = RED_MARKER;
+                        gameplan[From] = EMPTY_SPACE;
                         turn = BLUE_MOVES;
                         return true;
                     } else {
@@ -62,17 +67,18 @@ public class Game {
                 }
             } else {
                 Log.i("GameLogic", "blue moves");
-                if (bluemarker >= 0) {
+                if (bluemarker > 0 && From == 0) {
                     if (gameplan[To] == EMPTY_SPACE) {
                         gameplan[To] = BLUE_MARKER;
                         bluemarker--;
                         turn = RED_MOVES;
                         return true;
                     }
-                } else if (gameplan[To] == EMPTY_SPACE) {
+                } else if (gameplan[To] == EMPTY_SPACE && bluemarker == 0) {
                     boolean valid = isValidMove(To, From);
                     if (valid) {
                         gameplan[To] = BLUE_MARKER;
+                        gameplan[From] = EMPTY_SPACE;
                         turn = RED_MOVES;
                         return true;
                     } else {
